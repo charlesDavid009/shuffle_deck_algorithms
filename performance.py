@@ -1,5 +1,5 @@
 import time
-from generators import shuffle
+from generators import shuffle_generator
 
 start = shuffle.start
 
