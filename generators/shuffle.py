@@ -1,10 +1,10 @@
-from time import time
-import randoms
-import xorshift
+import time
+import generators.randoms
+import generators.xorshift
 
-seedlcg = randoms.seedLCG
-lcg = randoms.lcg
-xor = xorshift.XORShift(1)
+seedlcg = generators.randoms.seedLCG
+lcg = generators.randoms.lcg
+xor = generators.xorshift.XORShift(1)
 
 def start():
     print("Welcome To Random Generator\n\n")
@@ -17,16 +17,16 @@ def start():
     print("Enter the type of generator you wish to run\n")
     print("Enter 1 for Js random generator\n")
     print("Enter 2 for XorShift generator\n")
-    print("Enter 3 for SH501a.c generator\n")
+    print("Enter 3 for Well501a.c generator\n")
     choice = int(input("Please enter your choice here: "))
-    print("\n-----starting generator-----\n")
+    print("\n--------------------------starting generator------------------------------------n")
 
     if choice == 1:
         seedlcg(1)
-        start_time = time()
-        for i in range(rounds):
+        start_time = time.time_ns()
+        for i in range(rounds + 1):
             print("js random generated {}".format(lcg()))
-        end_time = time()
+        end_time = time.time_ns()
         total = (start_time + end_time)
         performance_interval = (end_time - start_time)
 
@@ -37,10 +37,10 @@ def start():
             performance_interval))
 
     elif choice == 2:
-        start_time = time()
-        for i in range(rounds):
+        start_time = time.time_ns()
+        for i in range(rounds + 1):
             print("Xor shift random generated: {}".format(xor.random()))
-        end_time = time()
+        end_time =time.time_ns()
         total = (start_time + end_time)
         performance_interval = (end_time - start_time)
         print("\nstart time {} microseconds".format(start_time))
