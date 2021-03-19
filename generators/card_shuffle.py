@@ -39,7 +39,7 @@ class Deck(object):
     # Display all cards in the deck
     def show(self):
         for card in self.cards:
-            print card.show()
+            print(card.show())
 
     # Generate 52 cards
     def build(self):
@@ -66,7 +66,7 @@ class Player(object):
         self.hand = []
 
     def sayHello(self):
-        print "Hi! My name is {}".format(self.name)
+        print("Hi! My name is {}".format(self.name))
         return self
 
     # Draw n number of cards from a deck
@@ -82,7 +82,7 @@ class Player(object):
 
     # Display all the cards in the players hand
     def showHand(self):
-        print "{}'s hand: {}".format(self.name, self.hand)
+        print("{}'s hand: {}".format(self.name, self.hand))
         return self
 
     def discard(self):
@@ -91,5 +91,3 @@ class Player(object):
 
 
 
-
-class 
